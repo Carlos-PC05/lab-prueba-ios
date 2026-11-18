@@ -37,6 +37,14 @@ Hay **3 pruebas de Swift Testing**. Las tres se redactaron antes de implementar 
 
 GitHub Actions compila la app y corre las pruebas con Xcode 16.4 en un iPhone 16 con iOS 18.5 tras cada push. Cada ejecución publica el artefacto **evidencia-ios** con los logs, el resultado de Xcode (`.xcresult`) y una captura de la lista cuando la app se inicia correctamente.
 
+### iPhone 16 con iOS 18.5
+
+<img src="docs/evidencia/lista.png" width="320" alt="Pantalla principal de UrbanExplorer en el simulador">
+
+![Extracto del log de Swift Testing con las tres pruebas superadas](docs/evidencia/pruebas.png)
+
+[Ver la ejecución y descargar la evidencia original](https://github.com/Carlos-PC05/lab-prueba-ios/actions/runs/44345590892)
+
 ## Imágenes
 
 Las miniaturas proceden de Wikimedia Commons. Cada ficha de Commons identifica al autor y las condiciones de reutilización.
