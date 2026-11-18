@@ -1,0 +1,234 @@
+[
+  {
+    "id": "dda748f5-c3e8-4c24-b950-29b480ff5c25",
+    "title": "Palacio Real de Madrid",
+    "description": "El palacio se alza sobre el antiguo Alcázar. La visita recorre los salones de la residencia histórica de la monarquía y sus colecciones de pintura y artes decorativas.",
+    "category": "Monumento",
+    "rating": 4.8,
+    "visitCount": 120,
+    "isFavorite": true,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Arquitectura",
+      "Historia"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/3c/Vista_de_parte_del_Real_Palacio_desde_la_Cuesta_de_la_Vega.jpg"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Vista_de_parte_del_Real_Palacio_desde_la_Cuesta_de_la_Vega.jpg/330px-Vista_de_parte_del_Real_Palacio_desde_la_Cuesta_de_la_Vega.jpg",
+    "webURL": "https://www.patrimonionacional.es/visita/palacio-real-de-madrid",
+    "latitude": 40.41795,
+    "longitude": -3.71431,
+    "reviews": [
+      {
+        "autor": "Ana",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "La plaza de Oriente ofrece una buena vista de la fachada.",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "a810d899-8f29-409e-9f8e-ff65df17d2e4",
+    "title": "Parque del Buen Retiro",
+    "description": "El antiguo jardín real reúne paseos arbolados, el Estanque Grande y el Palacio de Cristal. Sus entradas conectan con el paseo del Prado y la Puerta de Alcalá.",
+    "category": "Parque",
+    "rating": 4.9,
+    "visitCount": 151,
+    "isFavorite": false,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Jardines",
+      "Exterior"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/2b/MADRID_051116_MXALX_041.jpg"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/MADRID_051116_MXALX_041.jpg/330px-MADRID_051116_MXALX_041.jpg",
+    "webURL": "https://www.esmadrid.com/informacion-turistica/parque-del-retiro",
+    "latitude": 40.41526,
+    "longitude": -3.68447,
+    "reviews": [
+      {
+        "autor": "Lucía",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "Me gustó rodear el estanque a primera hora.",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "e48a3aca-fd1f-4941-8932-064af78fddef",
+    "title": "Museo Nacional del Prado",
+    "description": "El edificio de Juan de Villanueva acoge una colección de pintura europea en la que destacan Velázquez, Goya, Rubens y El Bosco.",
+    "category": "Museo",
+    "rating": 4.9,
+    "visitCount": 182,
+    "isFavorite": true,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Pintura",
+      "Arte"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/dc/Puerta_de_Vel%C3%A1zquez_Museo_Prado.jpg"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Puerta_de_Vel%C3%A1zquez_Museo_Prado.jpg/330px-Puerta_de_Vel%C3%A1zquez_Museo_Prado.jpg",
+    "webURL": "https://www.museodelprado.es/",
+    "latitude": 40.41378,
+    "longitude": -3.69213,
+    "reviews": [
+      {
+        "autor": "Mario",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "Reservaría tiempo para ver la pintura de Goya.",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "a924c1cf-0d78-49ba-9b86-973166c24553",
+    "title": "Museo Reina Sofía",
+    "description": "En el antiguo Hospital General y su ampliación se expone arte moderno y contemporáneo. El Guernica de Picasso forma parte de la colección permanente.",
+    "category": "Museo",
+    "rating": 4.7,
+    "visitCount": 213,
+    "isFavorite": false,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Arte moderno",
+      "Picasso"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/54/Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_%2848733949301%29.jpg"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_%2848733949301%29.jpg/330px-Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_%2848733949301%29.jpg",
+    "webURL": "https://www.museoreinasofia.es/",
+    "latitude": 40.40859,
+    "longitude": -3.69421,
+    "reviews": [
+      {
+        "autor": "Celia",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "El patio del edificio Sabatini merece una pausa.",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "a1d81d07-c857-4dd2-b42b-a1d462ba722b",
+    "title": "Templo de Debod",
+    "description": "Egipto donó este templo nubio a España. Fue trasladado piedra a piedra y se instaló junto a un mirador del parque del Oeste.",
+    "category": "Monumento",
+    "rating": 4.6,
+    "visitCount": 244,
+    "isFavorite": false,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Egipto",
+      "Historia"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Templo_de_Debod-Madrid.jpg"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Templo_de_Debod-Madrid.jpg/330px-Templo_de_Debod-Madrid.jpg",
+    "webURL": "https://www.esmadrid.com/informacion-turistica/templo-de-debod",
+    "latitude": 40.42405,
+    "longitude": -3.71777,
+    "reviews": [
+      {
+        "autor": "Jorge",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "El paseo por el mirador al atardecer fue mi parte favorita.",
+        "points": 4
+      }
+    ]
+  },
+  {
+    "id": "bc4272db-6bda-4deb-9b85-be01593e5fff",
+    "title": "Plaza Mayor",
+    "description": "Los soportales, la Casa de la Panadería y la estatua ecuestre de Felipe III enmarcan esta plaza del Madrid de los Austrias.",
+    "category": "Monumento",
+    "rating": 4.7,
+    "visitCount": 275,
+    "isFavorite": false,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Centro histórico",
+      "Arquitectura"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d2/Madrid_Plaza_Mayor_%2848733706273%29.jpg"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Madrid_Plaza_Mayor_%2848733706273%29.jpg/330px-Madrid_Plaza_Mayor_%2848733706273%29.jpg",
+    "webURL": "https://www.esmadrid.com/informacion-turistica/plaza-mayor-madrid",
+    "latitude": 40.41539,
+    "longitude": -3.70742,
+    "reviews": [
+      {
+        "autor": "Inés",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "Desde los soportales se ven bien los frescos de la fachada.",
+        "points": 4
+      }
+    ]
+  },
+  {
+    "id": "7cf23bd2-4244-4ee8-ab1a-fbdeb0abf9d9",
+    "title": "Puerta de Alcalá",
+    "description": "Francisco Sabatini diseñó esta antigua entrada a Madrid con cinco vanos. Hoy preside la plaza de la Independencia, junto al Retiro.",
+    "category": "Monumento",
+    "rating": 4.5,
+    "visitCount": 306,
+    "isFavorite": false,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Neoclásico",
+      "Arquitectura"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Madrid-_Puerta_de_Alcal%C3%A1_-_51454836861.jpg"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Madrid-_Puerta_de_Alcal%C3%A1_-_51454836861.jpg/330px-Madrid-_Puerta_de_Alcal%C3%A1_-_51454836861.jpg",
+    "webURL": "https://www.esmadrid.com/informacion-turistica/puerta-de-alcala",
+    "latitude": 40.41997,
+    "longitude": -3.68875,
+    "reviews": [
+      {
+        "autor": "Raúl",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "Se aprecia bien al salir del Retiro por la entrada principal.",
+        "points": 4
+      }
+    ]
+  },
+  {
+    "id": "546de783-eef1-4c08-9873-4a0dd19c2c86",
+    "title": "Real Jardín Botánico",
+    "description": "Las terrazas del jardín, junto al Prado, conservan colecciones de plantas vivas y un recorrido por invernaderos y parterres.",
+    "category": "Parque",
+    "rating": 4.6,
+    "visitCount": 337,
+    "isFavorite": false,
+    "createdAt": "2024-03-15T10:30:00Z",
+    "tags": [
+      "Botánica",
+      "Jardines"
+    ],
+    "imageURL": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/8f/Madrid_-_Real_Jard%C3%ADn_Bot%C3%A1nico_1.JPG"
+    ],
+    "mainImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Madrid_-_Real_Jard%C3%ADn_Bot%C3%A1nico_1.JPG/330px-Madrid_-_Real_Jard%C3%ADn_Bot%C3%A1nico_1.JPG",
+    "webURL": "https://www.rjb.csic.es/",
+    "latitude": 40.41147,
+    "longitude": -3.69005,
+    "reviews": [
+      {
+        "autor": "Elena",
+        "date": "2024-04-14T12:00:00Z",
+        "comment": "Las terrazas tienen rincones tranquilos para sentarse.",
+        "points": 4
+      }
+    ]
+  }
+]

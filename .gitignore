@@ -1,0 +1,8 @@
+/.build/
+/DerivedData/
+/xtool/
+/build/
+xcuserdata/
+*.xcuserstate
+.DS_Store
+.netrc
