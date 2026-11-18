@@ -1,0 +1,66 @@
+name: iOS
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  simulator:
+    name: Compilar y probar en el simulador
+    runs-on: macos-26
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Seleccionar y arrancar un iPhone
+        id: simulator
+        run: |
+          xcodebuild -version
+          device="$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          runtimes = json.load(sys.stdin)["devices"]
+          for runtime, devices in sorted(runtimes.items(), reverse=True):
+              if ".iOS-" in runtime:
+                  for device in devices:
+                      if device["name"].startswith("iPhone"):
+                          print(device["udid"])
+                          sys.exit(0)
+          sys.exit("No hay un simulador de iPhone disponible")
+          ')"
+          echo "id=$device" >> "$GITHUB_OUTPUT"
+          xcrun simctl boot "$device"
+
+      - name: Compilar la app y ejecutar Swift Testing
+        run: |
+          set -o pipefail
+          mkdir -p evidencia
+          xcodebuild test \
+            -project UrbanExplorer.xcodeproj \
+            -scheme UrbanExplorer \
+            -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.id }}' \
+            -derivedDataPath "$RUNNER_TEMP/UrbanExplorer" \
+            -resultBundlePath evidencia/Pruebas.xcresult \
+            -parallel-testing-enabled NO \
+            CODE_SIGNING_ALLOWED=NO | tee evidencia/xcodebuild.log
+
+      - name: Capturar la lista en el simulador
+        run: |
+          device='${{ steps.simulator.outputs.id }}'
+          app="$RUNNER_TEMP/UrbanExplorer/Build/Products/Debug-iphonesimulator/UrbanExplorer.app"
+          xcrun simctl bootstatus "$device" -b
+          xcrun simctl status_bar "$device" override --time '9:41' --dataNetwork wifi --wifiMode active --wifiBars 3 --cellularMode active --cellularBars 4 --batteryState unplugged --batteryLevel 100
+          xcrun simctl install "$device" "$app"
+          xcrun simctl launch "$device" com.carlospc05.UrbanExplorer
+          sleep 3
+          xcrun simctl io "$device" screenshot evidencia/lista.png
+
+      - name: Publicar resultados y captura
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: evidencia-ios
+          path: evidencia/
