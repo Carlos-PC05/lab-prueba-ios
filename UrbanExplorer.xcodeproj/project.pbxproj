@@ -11,12 +11,10 @@
 		1918099DA7B2D8DDFF8274E0 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E431D1F94D5C400E03D11B /* Review.swift */; };
 		1D415262A4200901D4DCA407 /* AboutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6102B239C1EFA22373586580 /* AboutDetailView.swift */; };
 		3313F4BBE1D9A71E4B50788D /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683405E9023FBEE6A592BC9 /* JSONLoader.swift */; };
-		447633F60A23962A74CEA317 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25DD8D4972766BCC48A0473 /* Foundation.framework */; };
 		5228B4545899A78AE3254EA0 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD48953966A55BB18879446 /* Spot.swift */; };
 		7667369AF02D10BE564265EB /* spots.json in Resources */ = {isa = PBXBuildFile; fileRef = 08C90C72FF6383585BC573FB /* spots.json */; };
 		99CF206CAF30AC83E7BC11A7 /* JSONLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CE2F1C6B9663CE7F6679C /* JSONLoaderTests.swift */; };
 		C0F529C3CF343CAA55E897EA /* UrbanExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A032C3C0E67194691606CD /* UrbanExplorerApp.swift */; };
-		E4CB7FBD016370A61FE66C61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25DD8D4972766BCC48A0473 /* Foundation.framework */; };
 		ED15295A63479E31ABB3D4F9 /* SpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CE0EF9E63814855BF467CC /* SpotListView.swift */; };
 		FA983A318C91A7B6B2043763 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3D672FC4A8A0A7FF953AF9 /* SpotDetailView.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +38,6 @@
 		6102B239C1EFA22373586580 /* AboutDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AboutDetailView.swift; sourceTree = "<group>"; };
 		610D7C34AB02ECB1E8A45153 /* UrbanExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		715B68BB7AAECB495E204969 /* SpotRowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotRowView.swift; sourceTree = "<group>"; };
-		A25DD8D4972766BCC48A0473 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AFD48953966A55BB18879446 /* Spot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		C2CE0EF9E63814855BF467CC /* SpotListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotListView.swift; sourceTree = "<group>"; };
 		C683405E9023FBEE6A592BC9 /* JSONLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
@@ -52,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4CB7FBD016370A61FE66C61 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				447633F60A23962A74CEA317 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +154,6 @@
 		FAB6E7BA8706D7D7EA9EBBED /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A25DD8D4972766BCC48A0473 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -336,7 +330,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -455,7 +449,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
