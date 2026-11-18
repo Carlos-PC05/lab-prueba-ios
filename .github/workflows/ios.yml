@@ -11,50 +11,63 @@ permissions:
 jobs:
   simulator:
     name: Compilar y probar en el simulador
-    runs-on: macos-26
-    timeout-minutes: 25
+    runs-on: macos-15
+    timeout-minutes: 20
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
     steps:
       - uses: actions/checkout@v6
 
-      - name: Seleccionar y arrancar un iPhone
-        id: simulator
-        run: |
-          xcodebuild -version
-          device="$(xcrun simctl list devices available -j | python3 -c '
-          import json, sys
-          runtimes = json.load(sys.stdin)["devices"]
-          for runtime, devices in sorted(runtimes.items(), reverse=True):
-              if ".iOS-" in runtime:
-                  for device in devices:
-                      if device["name"].startswith("iPhone"):
-                          print(device["udid"])
-                          sys.exit(0)
-          sys.exit("No hay un simulador de iPhone disponible")
-          ')"
-          echo "id=$device" >> "$GITHUB_OUTPUT"
-          xcrun simctl boot "$device"
-
-      - name: Compilar la app y ejecutar Swift Testing
+      - name: Compilar la app y las pruebas
         run: |
           set -o pipefail
+          xcodebuild -version
           mkdir -p evidencia
-          xcodebuild test \
+          xcodebuild build-for-testing \
+            -project UrbanExplorer.xcodeproj \
+            -scheme UrbanExplorer \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$RUNNER_TEMP/UrbanExplorer" \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee evidencia/compilacion.log
+
+      - name: Arrancar un iPhone con iOS 18.5
+        id: simulator
+        timeout-minutes: 5
+        run: |
+          device="$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"].get("com.apple.CoreSimulator.SimRuntime.iOS-18-5", [])
+          for device in devices:
+              if device["name"] == "iPhone 16":
+                  print(device["udid"])
+                  sys.exit(0)
+          sys.exit("No está disponible el iPhone 16 con iOS 18.5")
+          ')"
+          echo "id=$device" >> "$GITHUB_OUTPUT"
+          xcrun simctl bootstatus "$device" -b
+
+      - name: Ejecutar Swift Testing
+        timeout-minutes: 8
+        run: |
+          set -o pipefail
+          xcodebuild test-without-building \
             -project UrbanExplorer.xcodeproj \
             -scheme UrbanExplorer \
             -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.id }}' \
             -derivedDataPath "$RUNNER_TEMP/UrbanExplorer" \
             -resultBundlePath evidencia/Pruebas.xcresult \
             -parallel-testing-enabled NO \
-            CODE_SIGNING_ALLOWED=NO | tee evidencia/xcodebuild.log
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee evidencia/pruebas.log
+          xcrun xcresulttool get test-results summary --path evidencia/Pruebas.xcresult > evidencia/resumen.json
+          python3 -c 'import json, sys; sys.exit(0 if json.load(sys.stdin)["passedTests"] >= 3 else "Se esperaban al menos tres pruebas superadas")' < evidencia/resumen.json
 
       - name: Capturar la lista en el simulador
         run: |
           device='${{ steps.simulator.outputs.id }}'
           app="$RUNNER_TEMP/UrbanExplorer/Build/Products/Debug-iphonesimulator/UrbanExplorer.app"
-          xcrun simctl bootstatus "$device" -b
           xcrun simctl status_bar "$device" override --time '9:41' --dataNetwork wifi --wifiMode active --wifiBars 3 --cellularMode active --cellularBars 4 --batteryState unplugged --batteryLevel 100
           xcrun simctl install "$device" "$app"
-          xcrun simctl launch "$device" com.carlospc05.UrbanExplorer
+          xcrun simctl launch --terminate-running-process "$device" com.carlospc05.UrbanExplorer
           sleep 3
           xcrun simctl io "$device" screenshot evidencia/lista.png
 

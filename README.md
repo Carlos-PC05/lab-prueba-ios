@@ -35,7 +35,7 @@ Hay **3 pruebas de Swift Testing**. Las tres se redactaron antes de implementar 
 | `decodificaFechaYURL` | El decodificador convierte las fechas ISO 8601, la URL web y la URL de imagen a tipos de Foundation. |
 | `jsonInvalido` | Un documento JSON mal formado lanza `DecodingError`. |
 
-GitHub Actions compila la app y corre las pruebas con `xcodebuild test` en un simulador de iPhone tras cada push. Cada ejecución publica el artefacto **evidencia-ios** con el log, el resultado de Xcode (`.xcresult`) y una captura de la lista cuando la app se inicia correctamente.
+GitHub Actions compila la app y corre las pruebas con Xcode 16.4 en un iPhone 16 con iOS 18.5 tras cada push. Cada ejecución publica el artefacto **evidencia-ios** con los logs, el resultado de Xcode (`.xcresult`) y una captura de la lista cuando la app se inicia correctamente.
 
 ## Imágenes
 
